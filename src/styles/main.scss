@@ -1,0 +1,118 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap'");
+
+$font-inter: "Inter", sans-serif;
+
+$black: #010101;
+$red: #d40000;
+$white: #ffffff;
+$gray: #f3f2f0;
+
+$r_minmob: 320px;
+$r_mob_360: 360px;
+$r_mob_400: 400px;
+$r_mob_500: 500px;
+$r_mob_600: 600px;
+$r_tab: 768px;
+$r_tab_900: 900px;
+$r_desk: 1000px;
+$r_desk_1120: 1120px;
+$r_desk_hd: 1200px;
+$r_desk_1280: 1280px;
+$r_desk_1350: 1350px;
+$r_desk_full_1750: 1750px;
+
+html {
+  font-size: 10px;
+  @media (max-width: $r_mob_500) {
+    font-size: 8px;
+  }
+}
+
+body {
+  font-family: $font-inter;
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding-left: 15px;
+  padding-right: 15px;
+  position: relative;
+  @media (max-width: $r_tab) {
+    max-width: 600px;
+  }
+}
+
+.header {
+  max-width: 1140px;
+  margin: 0 auto 6rem;
+  display: flex;
+  gap: 8rem;
+  padding-left: 15px;
+  padding-right: 15px;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 4rem;
+  font-weight: 400;
+  font-size: 1.4rem;
+  line-height: 150%;
+  @media (max-width: $r_desk_1280) {
+    gap: 3%;
+  }
+  &__navigation {
+    flex-grow: 1;
+    margin-left: 4.5rem;
+    @media (max-width: $r_desk_1280) {
+      margin-left: 0;
+    }
+    @media (max-width: $r_desk_hd) {
+      flex-grow: 0;
+    }
+    @media (max-width: $r_tab_900) {
+      display: none;
+    }
+  }
+  &__nav {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding-left: 0;
+    gap: 5rem;
+    @media (max-width: $r_desk_hd) {
+      gap: 2.5rem;
+    }
+  }
+  &__link {
+    color: $black;
+    text-decoration: none;
+    &:hover {
+      color: $red;
+    }
+  }
+  &__tel {
+    color: $black;
+    text-decoration: none;
+    flex-basis: 200px;
+    letter-spacing: 1.3px;
+    text-align: right; 
+    border-right: 1px solid #ccc;
+    padding-right: 5px;
+    &:hover {
+      color: $red;
+    }
+    @media (max-width: $r_desk_hd) {
+      display: none;
+    }
+  }
+  &__email {
+    color: $black;
+    text-decoration: none;
+    list-style-type: none;
+    align-items: center;
+    text-align: center;
+    &:hover {
+      color: $red;
+    }
+  }
+}
