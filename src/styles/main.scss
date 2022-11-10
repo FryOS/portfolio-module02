@@ -51,7 +51,7 @@ body {
   margin: 0 auto 6rem;
   display: flex;
   gap: 8rem;
-  padding-left: 15px;
+  // padding-left: 15px;
   padding-right: 15px;
   margin-bottom: 6rem;
   justify-content: space-between;
@@ -65,15 +65,22 @@ body {
   }
   &__navigation {
     flex-grow: 1;
-    margin-left: 4.5rem;
-    @media (max-width: $r_desk_1280) {
-      margin-left: 0;
-    }
-    @media (max-width: $r_desk_hd) {
-      flex-grow: 0;
-    }
+    // margin-left: 4.5rem;
+    // @media (max-width: $r_desk_1280) {
+    //   margin-left: 0;
+    // }
+    // @media (max-width: $r_desk_hd) {
+    //   flex-grow: 0;
+    // }
+    // @media (max-width: $r_tab_900) {
+    //   display: none;
+    // }
+  }
+  &__contacts {
     @media (max-width: $r_tab_900) {
-      display: none;
+      display: flex;
+      justify-content: flex-start;
+      flex-basis: content;
     }
   }
   &__nav {
@@ -82,8 +89,12 @@ body {
     margin: 0;
     padding-left: 0;
     gap: 5rem;
-    @media (max-width: $r_desk_hd) {
-      gap: 2.5rem;
+    @media (max-width: $r_tab_900) {
+      gap: 1.5rem;
+    }
+    @media (max-width: $r_tab) {
+      gap: 2rem;
+      display: none;
     }
   }
   &__link {
@@ -104,9 +115,9 @@ body {
     &:hover {
       color: $red;
     }
-    @media (max-width: $r_desk_hd) {
-      display: none;
-    }
+    // @media (max-width: $r_desk_hd) {
+    //   display: none;
+    // }
   }
   &__email {
     color: $black;
@@ -114,6 +125,9 @@ body {
     list-style-type: none;
     align-items: center;
     text-align: center;
+    @media (max-width: $r_tab) {
+      display: none;
+    }
     &:hover {
       color: $red;
     }
@@ -136,11 +150,16 @@ body {
   }
   &__info {
   }
+  &__name {
+  }
   &__header {
     font-weight: 400;
     font-size: 2.8rem;
     line-height: 150%;
     margin-bottom: 10rem;
+    @media (max-width: $r_desk_hd) {
+      font-size: 1.8rem;
+    }
   }
   &__prof {
     text-transform: uppercase;
@@ -149,6 +168,9 @@ body {
     display: flex;
     justify-content: space-between;
     padding-bottom: 6rem;
+    @media (max-width: $r_mob_500) {
+      padding-top: 50px;
+    }
   }
   &__nav {
     display: flex;
@@ -168,6 +190,9 @@ body {
     font-size: 1.6rem;
     line-height: 1.5;
     transition: 0.3s;
+    @media (max-width: $r_tab) {
+      font-size: 1.4rem;
+    }
     &:hover {
       color: $red;
     }
@@ -186,10 +211,24 @@ body {
     justify-content: space-between;
     gap: 9rem;
     margin-bottom: 18rem;
+    height: 100%;
+    @media (max-width: $r_tab) {
+      gap: 5rem;
+    }
+    @media (max-width: $r_mob_600) {
+      gap: 4rem;
+      flex-flow: column wrap;
+      padding-bottom: 3rem;
+      margin-bottom: 9rem;
+    }
   }
   &__text {
     display: flex;
     flex-direction: column;
+    @media (max-width: $r_desk_hd) {
+      width: 100%;
+      height: 100%;
+    }
   }
   &__title {
     font-style: normal;
@@ -211,6 +250,10 @@ body {
     justify-content: space-between;
     padding-bottom: 6rem;
     border-bottom: 1px solid $black;
+    @media (max-width: $r_tab) {
+      flex-direction: column;
+      font-size: 1.6rem;
+    }
   }
   &__h2 {
     text-align: start;
@@ -220,6 +263,9 @@ body {
     letter-spacing: 0.03em;
     text-transform: uppercase;
     color: #010101;
+    @media (max-width: $r_tab) {
+      font-size: 1.6rem;
+    }
   }
   &__about-skills {
     display: grid;
@@ -297,6 +343,9 @@ body {
   line-height: 150%;
   color: $black;
   opacity: 0.8;
+  @media (max-width: $r_tab) {
+    font-size: 1.6rem;
+  }
 }
 
 .standart-text {
@@ -341,14 +390,13 @@ body {
     width: 171px;
     @media (max-width: $r_tab) {
       width: 136px;
+      font-size: 1.4rem;
     }
     @media (max-width: $r_mob_500) {
       width: 119px;
     }
   }
-  @media (max-width: $r_tab) {
-    font-size: 1.2rem;
-  }
+
   @media (max-width: $r_mob_500) {
     line-height: 1.8rem;
     padding-right: 17px;
@@ -371,6 +419,32 @@ body {
   position: absolute;
   top: -80px;
   left: -150px;
+  @media (max-width: $r_desk_1350) {
+    top: -100px;
+    left: -70px;
+    height: 220px;
+    width: 220px;
+  }
+  @media (max-width: $r_desk_1120) {
+    height: 200px;
+    width: 200px;
+  }
+  @media (max-width: $r_tab) {
+    top: -60px;
+    left: -76px;
+  }
+  @media (max-width: $r_mob_600) {
+    height: 160px;
+    width: 160px;
+    top: -60px;
+    left: -20px;
+  }
+  @media (max-width: $r_mob_400) {
+    top: -60px;
+    left: -76px;
+    height: 180px;
+    width: 180px;
+  }
 }
 
 .sphere-s {
@@ -460,6 +534,30 @@ body {
   position: absolute;
   top: -10px;
   left: -110px;
+  @media (max-width: $r_desk_1350) {
+    top: 145px;
+    left: 40px;
+  }
+  @media (max-width: $r_desk_1280) {
+    top: 140px;
+    left: 40px;
+  }
+  @media (max-width: $r_desk_hd) {
+    top: 105px;
+    left: 40px;
+  }
+  @media (max-width: $r_tab_900) {
+    top: 110px;
+    left: 10px;
+  }
+  @media (max-width: $r_tab) {
+    top: 100px;
+    left: -30px;
+  }
+  @media (max-width: $r_mob_600) {
+    top: 100px;
+    left: 20px;
+  }
 }
 
 .portfolio {
@@ -871,6 +969,10 @@ body {
     grid-template-rows: repeat(2, 1fr);
     padding-top: 6rem;
     margin-bottom: 18rem;
+    @media (max-width: $r_tab) {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+    }
   }
   &__order {
   }
