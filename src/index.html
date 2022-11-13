@@ -31,6 +31,10 @@
                         </li>
                     </ul>
                 </nav>
+                <div class="mob-burger">
+                    <button class="mob-burger-btn" onclick="document.getElementById('modal-menu').style.display = 'block'"><img src="./images/burger.svg"></button>
+                </div>
+                <!-- document.getElementById("modal-menu").style.display = "block"; -->
                 <div class="header__contacts">
                     <a class="header__tel" href="tel:+79237777777">8 923 777-77-77</a>
                     <a class="header__email" href="mailto:alexeyosp@gmail.com">alexey@gmail.com</a>
@@ -54,7 +58,8 @@
                         <h1 class="main__prof">WEB-разработчик</h1>
                     </div>
                     <div class="main__grid-socials">
-                        <button class="button-project">Обсудить проект</button>
+                        <button class="button-project"
+                            onclick="document.getElementById('modal-menu').style.top = '0'">Обсудить проект</button>
                         <ul class="main__nav">
                             <li class="main__item"><a class="main__link" href="#">VK</a></li>
                             <li class="main__item"><a class="main__link" href="#">Instagram</a></li>
@@ -302,7 +307,8 @@
                 <div class="rates__info">
                     <h3 class="rates__h3 user__text">Разработка лэндинга или сайт визитки</h3>
                     <p class="rates__text">Небольшой сайт состоящий из одной страницы</p>
-                    <button class="button-project">Обсудить проект</button>
+                    <button class="button-project" onclick="document.getElementById('Modal').style.top = '0'">Обсудить
+                        проект</button>
                 </div>
                 <div class="rates__price">
                     <h4 class="rates__h4">Что входит</h4>
@@ -319,7 +325,8 @@
                 <div class="rates__info">
                     <h3 class="rates__h3 user__text">Разработка лэндинга или сайт визитки</h3>
                     <p class="rates__text">Небольшой сайт состоящий из одной страницы</p>
-                    <button class="button-project">Обсудить проект</button>
+                    <button class="button-project" onclick="document.getElementById('Modal').style.top = '0'">Обсудить
+                        проект</button>
                 </div>
                 <div class="rates__price">
                     <h4 class="rates__h4">Что входит</h4>
@@ -336,7 +343,8 @@
                 <div class="rates__info">
                     <h3 class="rates__h3 user__text">Разработка лэндинга или сайт визитки</h3>
                     <p class="rates__text">Небольшой сайт состоящий из одной страницы</p>
-                    <button class="button-project">Обсудить проект</button>
+                    <button class="button-project" onclick="document.getElementById('Modal').style.top = '0'">Обсудить
+                        проект</button>
                 </div>
                 <div class="rates__price">
                     <h4 class="rates__h4">Что входит</h4>
@@ -381,7 +389,7 @@
                                 <label class="card__label" for="">Выберите удобный способ связи</label>
                                 <input class="card__input" type="tel" placeholder="Telegram">
                                 <div class="contact-box__submit">
-                                    <button type="submit" class="link ">Заказать звонок</button>
+                                    <button type="submit" class="link ">Отправить</button>
                                 </div>
 
                             </form>
@@ -423,8 +431,63 @@
                 </div>
             </div>
             <div class="sphere"></div>
-            <div class="triangle-top"></div>
+            <div class="triangle_top-footer"></div>
         </div>
     </section>
+
+    <div class="modal" id="Modal">
+        <div class="modal__container">
+            <div class="modal__box">
+                <h3 class="modal__title">Расскажите о&nbsp;своем проекте</h3>
+                <p class="modal__desc">Заполните все поля, и я свяжусь с вами в ближайшее время</p>
+                <button type="button" class="modal__close close"
+                    onclick="document.getElementById('Modal').style.top = '9999px'"></button>
+                <hr class="line">
+                <form class="modal__form">
+                    <label class="modal__label">Телефон или почта</label>
+                    <input class="card__input" type="tel" title="Например: 8 999 888-77-66"
+                        placeholder="Введите телефон">
+                    <label class="modal__label">Выберите удобный способ связи</label>
+                    <div id="selectModal" class="select"></div>
+                    <button class="button-project">Отправить</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-menu" id="modal-menu">
+        <div class="modal-menu__container">
+            <div class="modal-menu__items">
+                <button class="modal-menu__close" onclick="document.getElementById('modal-menu').style.display = 'none'"><img src="./images/close.svg"></button>
+                <ul class="modal-menu__list">
+                    <li class="modal-menu__list-item">
+                        <a class="modal-menu__list_link" href="#about">Обо мне</a>
+                    </li>
+                    <li class="modal-menu__list-item">
+                        <a class="modal-menu__list_link" href="#">Портфолио</a>
+                    </li>
+                    <li class="modal-menu__list-item">
+                        <a class="modal-menu__list_link" href="#">Этапы работ</a>
+                    </li>
+                    <li class="modal-menu__list-item">
+                        <a class="modal-menu__list_link" href="#">Цены</a>
+                    </li>
+                    <li class="modal-menu__list-item">
+                        <a class="modal-menu__list_link" href="#">Обратная связь</a>
+                    </li>
+                </ul>
+                <ul class="modal-menu__list modal-menu__list_contacts">
+                    <li><a class="modal-menu__list_phone" href="tel:89237777777">8 923 777-77-77</a></li>
+                    <li><a class="modal-menu__list_mail" href="mailto:alexdev@gmail.com">alexdev@gmail.com</a></li>
+                </ul>
+                <ul class="modal-menu__list modal-menu__list_socials">
+                    <li><a class="modal-menu__list_social modal-menu__list_social-vk" href="#">Vk</a></li>
+                    <li><a class="modal-menu__list_social modal-menu__list_social-inst" href="#">Instagram</a></li>
+                    <li><a class="modal-menu__list_social modal-menu__list_social-linkedin" href="#">Linkedin</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
 </body>
+
 </html>

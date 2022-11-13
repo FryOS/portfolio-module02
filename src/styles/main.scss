@@ -13,6 +13,7 @@ $r_mob_400: 400px;
 $r_mob_500: 500px;
 $r_mob_600: 600px;
 $r_tab: 768px;
+$r_tab_800: 800px;
 $r_tab_900: 900px;
 $r_desk: 1000px;
 $r_desk_1120: 1120px;
@@ -20,6 +21,13 @@ $r_desk_hd: 1200px;
 $r_desk_1280: 1280px;
 $r_desk_1350: 1350px;
 $r_desk_full_1750: 1750px;
+
+@mixin text($size: null, $line-height: null, $weight: null, $color: null) {
+  font-size: $size;
+  line-height: $line-height;
+  font-weight: $weight;
+  color: $color;
+}
 
 html {
   font-size: 10px;
@@ -82,6 +90,9 @@ body {
       justify-content: flex-start;
       flex-basis: content;
     }
+    @media (max-width: $r_tab) {
+      order: -1;
+    }
   }
   &__nav {
     display: flex;
@@ -115,9 +126,6 @@ body {
     &:hover {
       color: $red;
     }
-    // @media (max-width: $r_desk_hd) {
-    //   display: none;
-    // }
   }
   &__email {
     color: $black;
@@ -415,7 +423,9 @@ body {
     width: 171px;
     @media (max-width: $r_tab) {
       width: 136px;
-      font-size: 1.4rem;
+      font-weight: 700;
+      font-size: 12px;
+      line-height: 150%;
     }
     @media (max-width: $r_mob_500) {
       width: 119px;
@@ -548,6 +558,12 @@ body {
   position: absolute;
   top: -90px;
   left: 300px;
+  @media (max-width: $r_tab) {
+    height: 197px;
+    width: 197px;
+    top: -50px;
+    left: 50px;
+  }
 }
 
 .triangle-top {
@@ -585,6 +601,31 @@ body {
   }
 }
 
+.triangle_top-footer {
+  width: 0;
+  height: 0;
+  border-left: 30px solid transparent;
+  border-right: 30px solid transparent;
+  border-bottom: 60px solid $red;
+  position: absolute;
+  top: -50px;
+  left: 0px;
+  @media (max-width: $r_tab) {
+    top: -40px;
+    left: 90px;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-bottom: 30px solid $red;
+  }
+  @media (max-width: $r_mob_600) {
+    top: -50px;
+    left: 90px;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-bottom: 30px solid $red;
+  }
+}
+
 .portfolio {
   margin-bottom: 18rem;
   position: relative;
@@ -619,7 +660,7 @@ body {
     padding: 90px 0px 90px 0px;
     position: relative;
     @media (max-width: $r_tab) {
-      padding: 45px 0px 45px 0px;
+      padding: 30px 0px 30px 0px;
     }
   }
   &__title {
@@ -785,6 +826,11 @@ body {
     justify-content: space-between;
     padding-bottom: 6rem;
     margin-bottom: 6rem;
+    @media (max-width: $r_tab) {
+      flex-direction: column;
+      padding-bottom: 3rem;
+      margin-bottom: 3rem;
+    }
   }
   &__h2 {
     text-align: start;
@@ -793,12 +839,19 @@ body {
     line-height: 150%;
     letter-spacing: 0.03em;
     text-transform: uppercase;
+    @media (max-width: $r_tab) {
+      font-size: 16px;
+    }
   }
   &__text {
     font-weight: 500;
     font-size: 16px;
     line-height: 150%;
     opacity: 0.8;
+    @media (max-width: $r_tab) {
+      font-weight: 400;
+      font-size: 10px;
+    }
   }
   &__h4 {
     font-style: normal;
@@ -806,6 +859,9 @@ body {
     font-size: 16px;
     line-height: 150%;
     max-width: 400px;
+    @media (max-width: $r_tab) {
+      font-size: 14px;
+    }
   }
   &__item {
     font-style: normal;
@@ -813,6 +869,11 @@ body {
     font-size: 16px;
     line-height: 200%;
     opacity: 0.8;
+    @media (max-width: $r_tab) {
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 200%;
+    }
   }
   &__projects {
     display: grid;
@@ -833,6 +894,11 @@ body {
     font-size: 42px;
     line-height: 150%;
     color: #010101;
+    @media (max-width: $r_tab) {
+      font-weight: 700;
+      font-size: 22px;
+      line-height: 150%;
+    }
   }
 }
 
@@ -840,6 +906,7 @@ body {
   // border: 2px solid rgba($red, 0.4);
   // padding: 3.2rem 5.8rem 4rem;
   // border-radius: 2rem;
+
   &__title {
     font-size: 30px;
     font-family: $font-inter;
@@ -899,9 +966,14 @@ body {
 
 .contact-box {
   &__form {
-    // margin: 0px auto;
     max-width: 560px;
     width: calc(100% - 10px);
+    @media (max-width: $r_desk) {
+      max-width: 380px;
+    }
+    @media (max-width: $r_tab) {
+      order: -1;
+    }
   }
   &__submit {
     position: relative;
@@ -919,6 +991,9 @@ body {
 
 .footer {
   margin-bottom: 9rem;
+  @media (max-width: $r_tab) {
+    margin-bottom: 4.5rem;
+  }
   &__cover {
     width: 100%;
     height: 310px;
@@ -929,6 +1004,14 @@ body {
     justify-content: space-between;
     padding-bottom: 50px;
     padding-top: 50px;
+    @media (max-width: $r_desk) {
+    }
+    @media (max-width: $r_tab) {
+      flex-direction: column;
+      align-items: center;
+      padding-bottom: 25px;
+      padding-top: 25px;
+    }
   }
   &__photo {
     background-image: url(../images/bg.png);
@@ -957,6 +1040,9 @@ body {
     display: flex;
     gap: 2.8rem;
     align-items: flex-end;
+    @media (max-width: $r_tab) {
+      margin-top: 50px;
+    }
   }
   &__item {
     list-style-type: none;
@@ -1015,6 +1101,9 @@ body {
     justify-content: space-between;
     padding-bottom: 6rem;
     border-bottom: 1px solid $black;
+    @media (max-width: $r_tab) {
+      flex-direction: column;
+    }
   }
   &__h2 {
     text-align: start;
@@ -1024,6 +1113,9 @@ body {
     letter-spacing: 0.03em;
     text-transform: uppercase;
     color: #010101;
+    @media (max-width: $r_tab) {
+      font-size: 16px;
+    }
   }
   &__about-skills {
     display: grid;
@@ -1062,18 +1154,28 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
+    @media (max-width: $r_tab_800) {
+      flex-direction: column;
+      align-items: center;
+    }
   }
   &__navigation {
     flex-grow: 1;
     margin-left: 4.5rem;
-    @media (max-width: $r_desk_1280) {
-      margin-left: 0;
+    @media (max-width: $r_tab_800) {
+      flex-grow: 0;
+      padding-top: 25px;
     }
     @media (max-width: $r_desk_hd) {
-      flex-grow: 0;
+      // flex-grow: 0;
     }
     @media (max-width: $r_tab_900) {
-      display: none;
+      // display: none;
+    }
+  }
+  &__contacts {
+    @media (max-width: $r_tab_800) {
+      order: -1;
     }
   }
   &__nav {
@@ -1083,7 +1185,7 @@ body {
     padding-left: 0;
     gap: 5rem;
     @media (max-width: $r_desk_hd) {
-      gap: 2.5rem;
+      gap: 1.5rem;
     }
   }
   &__link {
@@ -1105,7 +1207,7 @@ body {
       color: $red;
     }
     @media (max-width: $r_desk_hd) {
-      display: none;
+      // display: none;
     }
   }
   &__email {
@@ -1125,9 +1227,288 @@ body {
     font-weight: 400;
     font-size: 12px;
     line-height: 150%;
-
     color: #010101;
-
     opacity: 0.3;
+    @media (max-width: $r_mob_600) {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+}
+
+.mob-burger {
+  display: none;
+
+  @media (max-width: $r_tab) {
+    display: block;
+  }
+  &-btn {
+    border: none;
+    list-style: none;
+    cursor: pointer;
+  }
+}
+
+.modal {
+  position: fixed;
+  top: 9999px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 500;
+  //visibility: hidden;
+  transition: opacity 0.3s, visibility 0s linear 0.3s;
+  &__btn {
+    @media (max-width: $r_mob_360) {
+      padding: 20px 80px;
+    }
+  }
+  &__container {
+    background-color: $gray;
+    max-width: 600px;
+    position: relative;
+    top: 15%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    z-index: 5;
+    @media (max-width: $r_mob_600) {
+      max-width: 360px;
+    }
+    @media (max-width: $r_mob_360) {
+      max-width: 280px;
+    }
+  }
+  &__box {
+    padding: 30px 20px;
+    position: relative;
+    @media (max-width: $r_mob_600) {
+      padding: 10px 10px 57px 10px;
+    }
+  }
+  &__title {
+    @include text(2.2rem, 3.3rem, 700);
+    letter-spacing: 0.07rem;
+    text-align: center;
+    text-transform: uppercase;
+    margin: 26px 0 14px 0;
+    @media (max-width: $r_mob_600) {
+      font-size: 1.6rem;
+      line-height: 2.4rem;
+      max-width: 168px;
+      margin: 50px auto 20px;
+    }
+  }
+  &__desc {
+    @include text(1.6rem, 2.4rem);
+    text-align: center;
+    max-width: 318px;
+    margin: 0 auto 28px;
+    @media (max-width: $r_mob_600) {
+      font-size: 1.6rem;
+      line-height: 2.4rem;
+      max-width: 260px;
+      margin: 0 auto 38px;
+    }
+  }
+  &__close {
+    width: 20px;
+    height: 20px;
+    background-color: inherit;
+    background-image: url("../images/close.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    border: none;
+    cursor: pointer;
+    @media (max-width: $r_mob_600) {
+      top: 10px;
+      right: 10px;
+    }
+  }
+  &__form {
+    margin-top: 40px;
+    @media (max-width: $r_mob_600) {
+      margin-top: 35px;
+    }
+  }
+  &__label {
+    font-size: 1.2rem;
+    line-height: 1.8rem;
+    @media (max-width: $r_mob_600) {
+      font-size: 1rem;
+    }
+  }
+  &__drop {
+    @media (max-width: $r_mob_600) {
+      margin-bottom: 26px;
+    }
+  }
+  &__control {
+    font-size: 1.2rem;
+    position: relative;
+    color: $gray;
+    display: block;
+    cursor: pointer;
+    padding: 27px 10px 23px 18px;
+    background-color: rgba($gray, 0.1);
+    transition: all 0.3s ease;
+    @media (max-width: $r_mob_600) {
+      font-size: 1rem;
+      padding: 20px 10px 23px 18px;
+    }
+    &:after {
+      content: "";
+      display: inline-block;
+      height: 1.2rem;
+      width: 1.2rem;
+      margin-left: 45.3rem;
+      background-image: url("../images/input-arrow.svg");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      transition: transform 0.3s ease;
+      @media (max-width: $r_desk_hd) {
+        margin-left: 40rem;
+      }
+      @media (max-width: $r_desk_1120) {
+        margin-left: 32rem;
+      }
+      @media (max-width: $r_desk) {
+        margin-left: 24.3rem;
+      }
+      @media (max-width: $r_mob_360) {
+        margin-left: 16.3rem;
+      }
+    }
+  }
+}
+
+.modal-menu {
+  display: none;
+  --array-2: 100px;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background-color: $gray;
+  z-index: 300;
+  transition: all 0.5s ease 0s;
+  // @media (min-width: 769px) {
+  //   display: none;
+  // }
+  &__container {
+    background-color: $gray;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  &__items {
+    max-width: 340px;
+    margin: 0 auto;
+    position: relative;
+  }
+  &__close {
+    border: none;
+    list-style: none;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+
+  }
+  &__list {
+    list-style-type: none;
+    font-size: 2.6rem;
+    padding-left: 0;
+    text-align: center;
+  }
+  &__list-item {
+    border-top: 1px solid rgba($black, 0.2);
+    padding: 2rem 0;
+  }
+  &__list_contacts {
+    display: flex;
+    justify-content: space-between;
+    max-width: 270px;
+    margin: 3rem auto 0;
+  }
+  &__list-item:last-child {
+    border-bottom: 1px solid rgba($black, 0.2);
+  }
+  &__list_link {
+    line-height: 39px;
+  }
+  &__list_phone {
+    color: $black;
+    text-decoration: none;
+    font-size: 14px;
+    line-height: 150%;
+    position: relative;
+    transition: 0.3s;
+    &:hover {
+      color: $red;
+    }
+    &:after {
+      content: "";
+      height: 2.4rem;
+      border: 1px solid rgba($black, 0.2);
+      position: absolute;
+      top: -1px;
+      right: -13px;
+      pointer-events: none;
+    }
+  }
+  &__list_mail {
+    color: $black;
+    text-decoration: none;
+    font-size: 14px;
+    line-height: 150%;
+    transition: 0.3s;
+    &:hover {
+      color: $red;
+    }
+  }
+  &__list_link,
+  .modal-menu__list_social {
+    color: $black;
+    text-decoration: none;
+    transition: 0.3s;
+    &:hover {
+      color: $red;
+    }
+  }
+  &__list_socials {
+    display: flex;
+    justify-content: space-around;
+    max-width: 200px;
+    margin: 1rem auto 0;
+  }
+  &__list_social {
+    font-size: 12px;
+    line-height: 150%;
+    text-transform: capitalize;
+    position: relative;
+    &-inst::before {
+      content: "";
+      height: 1.5rem;
+      border: 1px solid rgba($black, 0.2);
+      position: absolute;
+      top: -1px;
+      right: -13px;
+      pointer-events: none;
+    }
+    &-inst::after {
+      content: "";
+      height: 1.5rem;
+      border: 1px solid rgba($black, 0.2);
+      position: absolute;
+      top: -1px;
+      left: -10px;
+      pointer-events: none;
+    }
   }
 }
