@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap'");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap");
 
 $font-inter: "Inter", sans-serif;
 
@@ -119,8 +119,9 @@ body {
     color: $black;
     text-decoration: none;
     flex-basis: 200px;
-    letter-spacing: 1.3px;
     text-align: right;
+    line-height: 150%;
+    text-transform: capitalize;
     border-right: 1px solid #ccc;
     padding-right: 5px;
     &:hover {
@@ -133,6 +134,9 @@ body {
     list-style-type: none;
     align-items: center;
     text-align: center;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
     @media (max-width: $r_tab) {
       display: none;
     }
@@ -214,6 +218,7 @@ body {
   }
   &__grid-items {
     display: flex;
+    flex-wrap: wrap;
     border-top: 1px solid #000;
     padding-top: 6rem;
     justify-content: space-between;
@@ -224,7 +229,7 @@ body {
       gap: 5rem;
     }
     @media (max-width: $r_mob_600) {
-      gap: 4rem;
+      gap: 2rem;
       flex-flow: column wrap;
       padding-bottom: 3rem;
       margin-bottom: 9rem;
@@ -233,9 +238,10 @@ body {
   &__text {
     display: flex;
     flex-direction: column;
-    @media (max-width: $r_desk_hd) {
-      width: 100%;
-      height: 100%;
+    max-width: 250px;
+    height: 100%;
+    @media (max-width: $r_mob_600) {
+      
     }
   }
   &__title {
@@ -703,6 +709,7 @@ body {
   }
   &__site {
     display: flex;
+    align-items: center;
     justify-content: space-between;
     border-bottom: 1px solid $black;
     padding-top: 5rem;
@@ -721,13 +728,19 @@ body {
     position: relative;
   }
   &__img {
+    display: block;
+    position: relative;
+    max-width: 560px;
     width: 100%;
     height: 315px;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    object-fit: cover;
+    overflow: hidden;
+
+    // height: 315px;
+    // position: absolute;
+    // left: 50%;
+    // top: 50%;
+    // transform: translate(-50%, -50%);
+    // object-fit: cover;
     @media (max-width: $r_tab) {
       object-fit: contain;
     }
@@ -1398,6 +1411,7 @@ body {
   background-color: $gray;
   z-index: 300;
   transition: all 0.5s ease 0s;
+  А
   // @media (min-width: 769px) {
   //   display: none;
   // }
@@ -1418,7 +1432,6 @@ body {
     position: absolute;
     top: 20px;
     right: 20px;
-
   }
   &__list {
     list-style-type: none;
