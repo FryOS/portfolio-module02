@@ -228,19 +228,22 @@ body {
     }
   }
   &__title {
-    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
     line-height: 150%;
-    color: $black;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
     max-width: 250px;
     @media (max-width: $r_tab) {
       font-size: 12px;
     }
   }
   &__text {
+    font-style: normal;
     font-weight: 400;
     font-size: 14px;
     line-height: 150%;
-    color: $black;
+    color: #010101;
     opacity: 0.8;
     @media (max-width: $r_tab) {
       font-size: 10px;
