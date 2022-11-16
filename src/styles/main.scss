@@ -233,7 +233,7 @@ body {
     line-height: 150%;
     letter-spacing: 0.03em;
     text-transform: uppercase;
-    max-width: 250px;
+    max-width: 150px;
     @media (max-width: $r_tab) {
       font-size: 12px;
     }
@@ -245,8 +245,12 @@ body {
     line-height: 150%;
     color: #010101;
     opacity: 0.8;
+    max-width: 196px;
     @media (max-width: $r_tab) {
       font-size: 10px;
+    }
+    @media (max-width: $r_mob_500) {
+      max-width: 150px;
     }
   }
   &__about {
@@ -329,6 +333,9 @@ body {
   font-size: 16px;
   line-height: 150%;
   color: $black;
+  @media (max-width: $r_mob_500) {
+    font-size: 12px;
+  }
 }
 
 .item-1 {
@@ -819,6 +826,9 @@ body {
   &__img {
     filter: grayscale(1);
     transition: 0.3s;
+    &:hover{
+      filter: grayscale(0)
+    }
   }
 }
 
