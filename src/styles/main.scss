@@ -994,6 +994,7 @@ body {
     display: block;
     padding: 24px 0px 24px 20px;
     width: calc(100% - 20px);
+    box-sizing: border-box;
     &:focus {
       border: 1px solid rgba($red, 1);
       outline: none;
