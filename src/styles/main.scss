@@ -1055,11 +1055,16 @@ body {
   }
 }
 
+
 .card {
+  position: relative;
   // border: 2px solid rgba($red, 0.4);
   // padding: 3.2rem 5.8rem 4rem;
   // border-radius: 2rem;
-
+  &__button{
+    position: relative;
+  }
+  
   &__title {
     font-size: 30px;
     font-family: $font-inter;
@@ -1078,8 +1083,9 @@ body {
     color: #010101;
     opacity: 0.8;
   }
-  &__input {
+  &__input {    
     border: none;
+    margin-bottom: 20px;
     background-color: rgba(1, 1, 1, 0.05);
     display: block;
     padding: 24px 0px 24px 20px;
@@ -1096,6 +1102,24 @@ body {
     &:invalid {
       border: red;
     }
+    &::after{
+      // позиция
+      content: "";
+      position: absolute;
+      top: 50%;
+      right: 15px;
+      transform: translateY(-50%);
+  
+      // треугольник
+      width: 0;
+      height: 0;
+      border-width: 10.4px 6px 0 6px;
+      border-color: #79849b transparent transparent transparent;
+      border-style: solid;
+  
+      // снимаем клик со стрелки
+      pointer-events: none;
+    }    
   }
   &__check {
     font-size: 1.2rem;
