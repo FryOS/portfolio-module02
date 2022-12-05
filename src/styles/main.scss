@@ -29,6 +29,84 @@ $r_desk_full_1750: 1750px;
   color: $color;
 }
 
+.dropdown {
+  position: relative;
+  &:focus{
+    outline: none;
+    box-shadow: 0px 0px 0px 4px rgba(176, 198, 225, 0.6)
+  }
+&__button{
+  margin: 0;
+  padding: 0;
+  position: relative;
+  display: block;
+  width: calc(100% - 20px);
+  text-align: left;
+  background: rgba(1, 1, 1, 0.05);
+  border: none;
+  // height: 46px;
+  padding: 24px 0px 24px 20px;
+
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 150%;
+  color: #010101;
+  opacity: 0.8;
+  cursor: pointer;
+  &::after{
+    // позиция
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+
+    // треугольник
+    width: 0;
+    height: 0;
+    border-width: 10.4px 6px 0 6px;
+    border-color: #79849b transparent transparent transparent;
+    border-style: solid;
+
+    // снимаем клик со стрелки
+    pointer-events: none;
+  }
+}
+&__list{
+  display: none;
+
+  position: absolute;
+  left: 0;
+  top: 52px;
+
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+
+  background: rgba(1, 1, 1, 0.05);
+  box-shadow: 0 4 8 rgba(176, 198, 225, 0.6);
+  overflow: hidden;
+  width: calc(100% - 20px);
+
+  z-index: 5;
+}
+&__list-item{
+  margin: 0;
+  padding: 0;
+  padding: 24px 0px 24px 20px;
+  opacity: 0.8;
+  cursor: pointer;  
+  &:hover{
+    opacity: 1;
+  }
+}
+&__list-visible{
+  display: block;
+}
+  
+}
+
 html {
   font-size: 10px;
   @media (max-width: $r_mob_500) {
@@ -779,15 +857,19 @@ body {
     opacity: 0.8;
   }
   &__grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, 1fr);
+    // display: grid;
+    // grid-template-columns: repeat(3, 1fr);
+    // grid-template-rows: repeat(2, 1fr);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
     margin-top: 50px;
     gap: 80px;
     margin-bottom: 164px;
     @media (max-width: $r_tab) {
-      grid-template-columns: repeat(1, 1fr);
-      gap: 40px;
+      // grid-template-columns: repeat(1, 1fr);
+      justify-content: center;
+      row-gap: 20px;
     }
   }
   &__item {
@@ -991,18 +1073,22 @@ body {
     margin-left: 0.6rem;
     font-style: normal;
     font-weight: 400;
+    font-size: 12px;
     line-height: 150%;
     color: #010101;
     opacity: 0.8;
   }
   &__input {
-    
     border: none;
     background-color: rgba(1, 1, 1, 0.05);
     display: block;
     padding: 24px 0px 24px 20px;
     width: calc(100% - 20px);
     box-sizing: border-box;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 150%;
     &:focus {
       border: 1px solid rgba($red, 1);
       outline: none;

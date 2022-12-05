@@ -402,24 +402,37 @@
                     <div class="contact-box__form">
                         <div class="card">
                             <h3 class="card__title"></h3>
-                            <form action="" class="contact-box__form">
+                            <form class="contact-box__form">
                                 <label class="card__label" for="">Телефон или почта</label>
                                 <input class="card__input" type="text" placeholder="Введите телефон">
-                                
+
                                 <!-- <input class="card__input" type="tel" placeholder="Telegram"> -->
-                                
+
                                 <label class="card__label" for="socials-select">Выберите удобный способ связи</label>
-                                <select class="card__input" name="socials" id="socials-select">
+                                <!-- <select class="card__input" name="socials" id="socials-select">
                                     <option value="Telegram">Telegram</option>
                                     <option value="WhatsUP">WhatsUP</option>
                                     <option value="Viber">Viber</option>
                                     <option value="Telephone">Звонок на телефон</option>
                                     <option value="SMS">SMS сообщение</option>
-                                </select>
+                                </select> -->
+
+                                <div class="form-group">
+                                    <div class="dropdown">
+                                        <button class="dropdown__button">Выберите удобный способ связи</button>
+                                        <ul class="dropdown__list">
+                                            <li class="dropdown__list-item" data-value="Telegram">Telegram</li>
+                                            <li class="dropdown__list-item" data-value="WhatsUP">WhatsUP</li>
+                                            <li class="dropdown__list-item" data-value="Viber">Viber</li>
+                                            <li class="dropdown__list-item" data-value="Telephone">Звонок на телефон
+                                            </li>
+                                            <li class="dropdown__list-item" data-value="SMS">SMS сообщение</li>
+                                        </ul>
+                                    </div>
+                                </div>
                                 <div class="contact-box__submit">
                                     <button type="submit" class="link ">Отправить</button>
                                 </div>
-
                             </form>
                         </div>
                     </div>
