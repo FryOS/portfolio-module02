@@ -76,7 +76,7 @@ $r_desk_full_1750: 1750px;
 &__list{
   display: none;
 
-  position: absolute;
+  // position: absolute;
   left: 0;
   top: 52px;
 
@@ -94,7 +94,7 @@ $r_desk_full_1750: 1750px;
 &__list-item{
   margin: 0;
   padding: 0;
-  padding: 24px 0px 24px 20px;
+  padding: 12px 0px 12px 10px;
   opacity: 0.8;
   cursor: pointer;  
   &:hover{
